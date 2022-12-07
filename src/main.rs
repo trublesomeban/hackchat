@@ -1,8 +1,8 @@
 #[macro_use]
 extern crate rocket;
 
-use rocket::{form::Form, tokio::fs::read_to_string};
 use rocket::response::content::RawHtml;
+use rocket::{form::Form, tokio::fs::read_to_string};
 
 use std::{fs::OpenOptions, io::Write};
 
@@ -18,13 +18,14 @@ async fn chat(msg: Form<PostMsg>) -> RawHtml<String> {
         .append(true)
         .open("chat.txt")
         .unwrap();
-    writeln!(file, "[anonymous]: {}<br>", msg.content).unwrap();
-
+    if !msg.content.is_empty() {
+        writeln!(file, "<div class=\"msgbox\"><div class=\"username\">[anonymous]</div> {}</div><br>", msg.content).unwrap();
+    }
     return RawHtml(format!(
         "{}{}",
         // msg.content,
         read_to_string("chat.txt").await.unwrap(),
-        include_str!("../html/chat.html")
+        read_to_string("html/chat.html").await.unwrap()
     ));
 }
 
@@ -34,8 +35,8 @@ async fn index() -> RawHtml<String> {
         "{}{}",
         // msg.content,
         read_to_string("chat.txt").await.unwrap(),
-        include_str!("../html/chat.html")
-    ))
+        read_to_string("html/chat.html").await.unwrap()
+    ));
 }
 
 #[launch]

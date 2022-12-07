@@ -1,3 +1,8 @@
-<form action="/chat/" method="post">   
+<form action="/chat/" method="post" id="msg">
 	<input type="text" name="content" id="content">
+	<button action="/" method="get">Refresh</button>
 </form>
+
+<script>
+	const msgbox = document.getElementById("msg").scrollIntoView(true);
+</script>

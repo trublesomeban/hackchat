@@ -1,0 +1,9 @@
+page {
+	font-family: url("fira.ttf");
+	color: lightgreen;
+	background-color: black;
+}
+
+.username {
+	font: italic;
+}
