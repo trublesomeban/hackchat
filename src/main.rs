@@ -18,7 +18,8 @@ async fn chat(username: String, msg: Form<PostMsg>) -> RawHtml<String> {
         .append(true)
         .open("chat.txt")
         .unwrap();
-    let timestamp = chrono::offset::Utc::now().to_string();
+    let _stamp = chrono::offset::Utc::now().to_string();
+    let timestamp = _stamp.split(".").last().unwrap();
     if !msg.content.is_empty() {
         writeln!(
             file,
