@@ -11,37 +11,41 @@ struct PostMsg {
     content: String,
 }
 
-#[post("/chat", data = "<msg>")]
-async fn chat(msg: Form<PostMsg>) -> RawHtml<String> {
+#[post("/chat/<username>", data = "<msg>")]
+async fn chat(username: String, msg: Form<PostMsg>) -> RawHtml<String> {
     let mut file = OpenOptions::new()
         .write(true)
         .append(true)
         .open("chat.txt")
         .unwrap();
+    let timestamp = chrono::offset::Utc::now().to_string();
     if !msg.content.is_empty() {
-        writeln!(file, "<div class=\"msgbox\"><div class=\"username\">[anonymous]</div> {}</div><br>", msg.content).unwrap();
+        writeln!(
+            file,
+            "<span class=\"{username}-username username\">[{username}]</span> <a class=\"msgbox\">{}</a> <span class=\"timestamp\">{timestamp}</span><br>",
+            msg.content
+        )
+        .unwrap();
     }
     return RawHtml(format!(
-        "{}{}",
+        "<div class=\"chatbox\">{}{}</div>",
         // msg.content,
         read_to_string("chat.txt").await.unwrap(),
         read_to_string("html/chat.html").await.unwrap()
     ));
 }
 
-#[get("/")]
-async fn index() -> RawHtml<String> {
+#[get("/login")]
+async fn login() -> RawHtml<String> {
     return RawHtml(format!(
-        "{}{}",
-        // msg.content,
-        read_to_string("chat.txt").await.unwrap(),
-        read_to_string("html/chat.html").await.unwrap()
+        "{}",
+        read_to_string("html/login.html").await.unwrap()
     ));
 }
 
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", routes![index])
+        .mount("/", routes![login])
         .mount("/", routes![chat])
 }

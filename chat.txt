@@ -1,0 +1,28 @@
+<span class="ban-username username">[ban]</span> <a class="msgbox">Dobra chyba naprawiłem</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox"><span style="font-size: 40px;"> XSS jest świetny</span></a><br>
+<span class="Nadwej-username username">[Nadwej]</span> <a class="msgbox">&lt;a href=&quot;https://google.com&quot;&gt;test&lt;/a&gt;</a><br>
+<span class="Atek-username username">[Atek]</span> <a class="msgbox"><a href="https://google.com">test</a></a><br>
+<span class="Atek-username username">[Atek]</span> <a class="msgbox"><a href="https://trollface.dk/">darmowa maszyna wirtualna</a></a><br>
+<span class="Nadwej-username username">[Nadwej]</span> <a class="msgbox">test777</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox"><button onclick="new Audio('https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Never+Gonna+Give+You+Up-+Original&filename=mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3')">test</button></a><br>
+<span class="Atek-username username">[Atek]</span> <a class="msgbox">style="font-size: 40px;">amogus</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox"><img src='https://media.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif'></a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">jest tam ktoś wogóle?</a><br>
+<span class="Nadwej-username username">[Nadwej]</span> <a class="msgbox">tak</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">co tam się podziało na dole</a><br>
+<span class="Nadwej-username username">[Nadwej]</span> <a class="msgbox"><img src="http://nadwey2.duckdns.org/rickroll.gif" /></a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">coś się dzieje</a><br>
+<span class="Atek-username username">[Atek]</span> <a class="msgbox">style="font-size: 40px;">amogus</a><br>
+<span class="Nadwej-username username">[Nadwej]</span> <a class="msgbox"><img src="http://nadwey2.duckdns.org/rickroll.gif" /></a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">serio?</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">comic sans?</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">chociaż w sumie</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">dyslektykom będzie łatwiej czytać</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">co to było</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">w sumie</a><br>
+<span class="Atek-username username">[Atek]</span> <a class="msgbox">nice</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">warto by dodać time stampy</a><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">test daty</a><span class="timestamp">2022-12-08T12:51:07.074489856Z</span><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">drugi test daty</a> <span class="timestamp">2022-12-08T12:52:59.482839643Z</span><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">no i klasa</a> <span class="timestamp">2022-12-08T12:53:03.658964013Z</span><br>
+<span class="ban-username username">[ban]</span> <a class="msgbox">chociaż trochę brzydko to wygląda</a> <span class="timestamp">2022-12-08 12:54:42.799453014 UTC</span><br>

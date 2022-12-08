@@ -9,5 +9,6 @@ edition = "2021"
 opt-level = 0
 
 [dependencies]
-rocket = { version = "0.5.0-rc.2", features = ["secrets"] }
+rocket = { version = "0.5.0-rc.2"}
+chrono = "0.4.23"
 

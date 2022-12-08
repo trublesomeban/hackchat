@@ -1,0 +1,14 @@
+<form method="post" id="login" onsubmit="return submit()" action="/chat">
+	Nazwa użytkownika <input type="text" name="username" id="username"><br>
+	Wiadomość powitalna <input type="text" name="content" id="content">
+	<button onclick="this.submit();">Zaloguj</button>
+</form>
+
+<script>
+	const template = (username) => `/chat/${username}/`;
+	document.getElementById('login').addEventListener('submit', function (s) {
+		s.preventDefault();
+		this.action = template(this.elements["username"].value);
+		this.submit();
+	});
+</script>

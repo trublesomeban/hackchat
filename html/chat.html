@@ -1,8 +1,47 @@
 <form action="/chat/" method="post" id="msg">
-	<input type="text" name="content" id="content">
+	<input type="text" name="content" id="content" autofocus>
 	<button action="/" method="get">Refresh</button>
 </form>
+<style>
+	img {
+		max-width: 40%;
+		max-height: 25%;
+	}
 
-<script>
-	const msgbox = document.getElementById("msg").scrollIntoView(true);
+	body {
+		font-family: monospace;
+		color: lightgreen;
+		background-color: black;
+	}
+
+	.content {
+		border: none;
+		border-radius: 4;
+	}
+
+	.username {
+		font-weight: bolder;
+	}
+
+	.chatbox {
+		margin: auto;
+		width: 50%;
+		padding: 10px;
+		font-weight: bold;
+	}
+
+	.timestamp {
+		font-weight: lighter;
+	}
+</style>
+<script defer>
+	const template = (username) => `/chat/${username}/`;
+	document.getElementById('msg').addEventListener('submit', function (s) {
+		s.preventDefault();
+		let tmp = window.location.href.split("/")
+		this.action = template(tmp[tmp.length - 2]);
+		this.submit();
+	});
+	const msgbox = document.getElementById("msg");
+	setTimeout(() => msgbox.scrollIntoView(true), 0)
 </script>
