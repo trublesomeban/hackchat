@@ -1,11 +1,101 @@
-<form method="post" id="login" onsubmit="return submit()" action="/chat">
-	Nazwa użytkownika <input type="text" name="username" id="username"><br>
-	Wiadomość powitalna <input type="text" name="content" id="content">
-	<button onclick="this.submit();">Zaloguj</button>
-</form>
+<div class="center">
+	<div class="title">Hackchat.exe</div>
+	<form method="post" id="login" onsubmit="return submit()" action="/chat">
+		Nazwa użytkownika<br>><input type="text" name="username" id="username" autofocus><br>
+		Wiadomość powitalna<br>><input type="text" name="content" id="content"><br>
+		<button onclick="this.submit();">Zaloguj</button>
+	</form>
+</div>
+
+<style>
+	input {
+		font-family: monospace;
+		color: lightgreen;
+		font-weight: bold;
+		position: relative;
+		display: inline-block;
+		outline: none;
+		margin: 6px;
+		border: none 2px;
+		background-color: black;
+		color: white;
+	}
+
+	input::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: -15px;
+		display: inline-block;
+		background-color: #606060;
+		vertical-align: top;
+		width: 20px;
+		height: 24px;
+		-webkit-animation: blink 1s step-end infinite;
+		animation: blink 1s step-end infinite;
+		min-width: 360px;
+	}
+
+	@-webkit-keyframes blink {
+		0% {
+			opacity: 1.0;
+		}
+
+		50% {
+			opacity: 0.0;
+		}
+
+		100% {
+			opacity: 1.0;
+		}
+	}
+
+	@keyframes blink {
+		0% {
+			opacity: 1.0;
+		}
+
+		50% {
+			opacity: 0.0;
+		}
+
+		100% {
+			opacity: 1.0;
+		}
+	}
+
+	button {
+		outline: none;
+		border: none 2px;
+		background-color: lightgreen;
+		color: black;
+		font-family: monospace;
+		font-weight: bolder;
+	}
+
+	body {
+		font-family: monospace;
+		color: lightgreen;
+		background-color: black;
+	}
+
+	.title {
+		font-size: 32;
+	}
+
+	.center {
+		border: solid;
+		border-color: lightgreen;
+		border-width: 2px;
+		margin: auto;
+		width: 20%;
+		padding: 10px;
+		font-weight: bold;
+	}
+</style>
 
 <script>
-	const template = (username) => `/chat/${username}/`;
+	const template = (username) => username != "" ? `/chat/${username}/` : "/chat/anonymous/";
 	document.getElementById('login').addEventListener('submit', function (s) {
 		s.preventDefault();
 		this.action = template(this.elements["username"].value);
